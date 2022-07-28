@@ -21,6 +21,7 @@ class ButtonsTabBar extends StatefulWidget implements PreferredSizeWidget {
     this.unselectedBorderColor = Colors.black,
     this.physics = const BouncingScrollPhysics(),
     this.contentPadding = const EdgeInsets.symmetric(horizontal: 4),
+    this.contentPadding = const EdgeInsets.all(0),
     this.buttonMargin = const EdgeInsets.all(4),
     this.labelSpacing = 4.0,
     this.radius = 7.0,
@@ -111,6 +112,11 @@ class ButtonsTabBar extends StatefulWidget implements PreferredSizeWidget {
   ///
   /// The default value is [EdgeInsets.symmetric(horizontal: 4)].
   final EdgeInsets contentPadding;
+
+  /// The [EdgeInsets] used for the [Padding] of the overall tab bar.
+  ///
+  /// The default value is [EdgeInsets.zero].
+  final EdgeInsets padding;
 
   /// The [EdgeInsets] used for the [Margin] of the buttons.
   ///
@@ -418,7 +424,7 @@ class _ButtonsTabBarState extends State<ButtonsTabBar>
             physics: widget.physics,
             controller: _scrollController,
             scrollDirection: Axis.horizontal,
-            padding: widget.center ? _centerPadding : EdgeInsets.zero,
+            padding: widget.center ? _centerPadding : widget.padding,
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: List.generate(
