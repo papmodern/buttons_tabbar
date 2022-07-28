@@ -21,7 +21,7 @@ class ButtonsTabBar extends StatefulWidget implements PreferredSizeWidget {
     this.unselectedBorderColor = Colors.black,
     this.physics = const BouncingScrollPhysics(),
     this.contentPadding = const EdgeInsets.symmetric(horizontal: 4),
-    this.contentPadding = const EdgeInsets.all(0),
+    this.padding = const EdgeInsets.all(0),
     this.buttonMargin = const EdgeInsets.all(4),
     this.labelSpacing = 4.0,
     this.radius = 7.0,
