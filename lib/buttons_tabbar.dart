@@ -190,7 +190,7 @@ class _ButtonsTabBarState extends State<ButtonsTabBar>
   void initState() {
     super.initState();
     WidgetsBinding.instance
-        .addPostFrameCallback((_) => _getCenterPadding(context));
+        ?.addPostFrameCallback((_) => _getCenterPadding(context));
 
     _tabKeys = widget.tabs.map((Widget tab) => GlobalKey()).toList();
 
